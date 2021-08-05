@@ -25,7 +25,7 @@ Food.proTypes = {
 function App() {
   return (
 	<div>
-		{foddILike.map(dish => (
+		{foodILike.map(dish => (
 			<Food key={dish.id} name={dish.name} picture={dish.image} />
 		))}
 	</div>
