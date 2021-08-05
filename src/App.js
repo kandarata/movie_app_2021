@@ -5,7 +5,7 @@ const foodILike = [
 	{
 		id:1,
 		name : "test",
-		image: "test.jpg"
+		image: "../public/test.jpg"
 	}
 ];
 
