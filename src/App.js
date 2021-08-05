@@ -1,5 +1,5 @@
 import React from "react";
-import ProTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const foodILike = [
 	{
@@ -18,7 +18,7 @@ function Food({name}, {picture}) {
 	);
 }
 
-Food.proTypes = {
+Food.propTypes = {
 
 }
 
