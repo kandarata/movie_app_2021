@@ -9,7 +9,7 @@ const foodILike = [
 	}
 ];
 
-function Food({name}, {picture}) {
+function Food({name, picture}) {
 	return (
 		<div>
 			<h2>I like {name}</h2>
@@ -22,12 +22,14 @@ Food.propTypes = {
 
 }
 
+function renderFood(dish) {
+	return <Food key={dish.id} name={dish.name} picture={dish.image} />
+}
+
 function App() {
   return (
 	<div>
-		{foodILike.map(dish => (
-			<Food key={dish.id} name={dish.name} picture={dish.image} />
-		))}
+		{foodILike.map(renderFood)}
 	</div>
   );
 }
