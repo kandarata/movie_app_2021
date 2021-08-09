@@ -8,8 +8,17 @@ class App extends React.Component {
     movies: []
   }
   
+  getMovies = () => {
+    const {
+      data : {
+        data: { movies }
+      }
+    } = await axios.get("https://yts-proxy.now.sh/list_movies.json");
+    return (movies);
+  }
+  
   componentDidMount() {
-	  axios.get("https://yts-proxy.now.sh/list_movies.json")
+	  this.getMovies();
   }
   
   render() {
