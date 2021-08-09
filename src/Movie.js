@@ -8,9 +8,9 @@ function Movie(id, year, title, summary, poster) {
 Movie.PropTypes = {
   id: PropTypes.number.isRequired,
   year:PropTypes.number.isRequired,
-  title : PropTypes.String.isRequired,
-  summary: PropTypes.String.isRequired,
-  poster : PropTypes.String.isRequired,
+  title : PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  poster : PropTypes.string.isRequired,
 }
 
 export default Movie;
