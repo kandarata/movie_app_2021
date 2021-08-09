@@ -1,19 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
+import imagesrc from "./test.jpg";
 
 const foodILike = [
 	{
 		id:1,
 		name : "test",
-		image: "./test.jpg"
+		image: "./test.jpg",
 	}
 ];
 
-function Food({name}, {picture}) {
+function Food({name, image}) {
 	return (
 		<div>
 			<h2>I like {name}</h2>
-			<img src={picture} alt={name}/>
+			<img src={imagesrc} alt={name}/>
 		</div>
 	);
 }
@@ -22,12 +23,16 @@ Food.propTypes = {
 
 }
 
+function renderFood(dish) {
+	return (
+		<Food name={dish.name} image={dish.image} />
+	);
+}
+
 function App() {
   return (
 	<div>
-		{foodILike.map(dish => (
-			<Food key={dish.id} name={dish.name} picture={dish.image} />
-		))}
+		{foodILike.map(renderFood)}
 	</div>
   );
 }
