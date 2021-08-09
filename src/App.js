@@ -1,6 +1,6 @@
 import React from "react";
 
-class App() extends React.Component {
+class App extends React.Component {
   state = {
     isLoading: true,
     movies: []
@@ -10,10 +10,12 @@ class App() extends React.Component {
     setTimeout(() => {
       this.setState({ isLoading: false, book: true });
     }, 6000);
-  }
+  };
   
   render() {
     const { isLoading } = this.state;
-    return <div>{isLoading ? "Loading..." : "We are ready"}<div>;
-  }
+    return (
+      <div>{ isLoading ? "Loading..." : "We are ready" }</div>
+    );
+  };
 }
