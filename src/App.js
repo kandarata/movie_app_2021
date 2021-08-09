@@ -5,6 +5,7 @@ class App extends React.Component {
         super(props);
         console.log("hello");
     }
+
     state = {
         count : 0
     };
@@ -37,7 +38,7 @@ class App extends React.Component {
                 <button onClick={this.add}>add</button>
                 <button onClick={this.minus}>minus</button>
             </div>
-
+	);
     }
 }
 
