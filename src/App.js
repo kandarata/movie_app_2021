@@ -1,40 +1,44 @@
 import React from "react";
-import PropTypes from "prop-types";
-import imagesrc from "./test.jpg";
 
-const foodILike = [
-	{
-		id:1,
-		name : "test",
-		image: "./test.jpg",
-	}
-];
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        console.log("hello");
+    }
+    state = {
+        count : 0
+    };
 
-function Food({name, image}) {
-	return (
-		<div>
-			<h2>I like {name}</h2>
-			<img src={imagesrc} alt={name}/>
-		</div>
-	);
-}
+    add = () => {
+        this.setState({count: this.state.count + 1});
+    }
 
-Food.propTypes = {
+    minus = () => {
+        this.setState({count: this.state.count - 1});
+    }
 
-}
+    componentDidMount() {
+        console.log("component rendered");
+    }
 
-function renderFood(dish) {
-	return (
-		<Food name={dish.name} image={dish.image} />
-	);
-}
+    componentDidUpdate() {
+        console.log("component update");
+    }
 
-function App() {
-  return (
-	<div>
-		{foodILike.map(renderFood)}
-	</div>
-  );
+    componentWillUnmount() {
+        console.log("component Unmounted");
+    }
+
+    render() {
+        console.log("I'm rendering");
+        return (
+            <div>
+                <h1>this is number : {this.state.count}</h1>
+                <button onClick={this.add}>add</button>
+                <button onClick={this.minus}>minus</button>
+            </div>
+
+    }
 }
 
 export default App;
